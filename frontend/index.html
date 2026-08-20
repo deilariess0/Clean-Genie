@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clean Genie Cleaning Corp.</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts (Inter) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Link to your EXTERNAL CSS file -->
+    <link rel="stylesheet" href="style.css">
+
+        <!-- Custom Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-dark': '#1e2c56',  // This makes bg-brand-dark work!
+                        'brand-blue': '#2563eb',
+                        'primary': '#2563eb'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans text-gray-700 bg-white scroll-smooth">
+
+    <!-- ================= HEADER ================= -->
+    <header id="main-header" class="bg-white shadow-sm sticky top-0 z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center gap-3 z-10">
+                    <img src="images/genie.png" alt="Clean Genie Logo" class="w-10 h-10 object-contain">
+                    <div>
+                        <div class="flex items-center gap-1 font-bold text-lg text-slate-900 leading-none">
+                            <span class="text-primary">CLEAN</span> GENIE
+                        </div>
+                        <div class="text-[10px] text-slate-500 font-medium tracking-widest uppercase mt-1">Cleaning Corp.</div>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex space-x-8 text-sm font-medium text-gray-600" id="desktop-nav">
+                    <a href="#home" class="nav-link">Home</a>
+                    <a href="#services" class="nav-link">Services</a>
+                    <a href="#about" class="nav-link">About Us</a>
+                    <a href="#contact" class="nav-link">Contact Us</a>
+                </nav>
+
+                <!-- CTA Button (Desktop) -->
+                <a href="booking/index.html" class="hidden md:inline-block bg-brand-dark text-white px-6 py-2.5 rounded-md font-medium text-sm hover:bg-brand-blue transition-all shadow-md">Book a Service</a>
+
+                <!-- Mobile Menu Toggle -->
+                <button id="mobile-menu-btn" class="md:hidden text-brand-dark text-2xl focus:outline-none hover:text-brand-blue transition z-10">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Navigation Dropdown -->
+            <div id="mobile-menu" class="hidden md:hidden flex-col space-y-3 pb-6 pt-4 bg-white absolute left-0 w-full shadow-md px-4 sm:px-6 lg:px-8 border-t border-gray-100">
+                <a href="#home" class="mobile-nav-link">Home</a>
+                <a href="#services" class="mobile-nav-link">Services</a>
+                <a href="#about" class="mobile-nav-link">About Us</a>
+                <a href="#contact" class="mobile-nav-link">Contact Us</a>
+                <div class="flex justify-center mt-4">
+                    <a href="booking/index.html" class="bg-brand-dark text-white text-center px-6 py-3 rounded-md font-medium hover:bg-brand-blue transition shadow-md w-full max-w-xs">Book a Service</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ================= SECTION 01: HOME (With Sliding Image + Blue Background) ================= -->
+    <section id="home" class="w-full bg-cover bg-center bg-no-repeat py-16 lg:py-24 scroll-mt-20" style="background-image: url('images/Images5.png');">
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                
+                <!-- Left: Text Content -->
+                <div class="space-y-6 text-center lg:text-left fade-in">
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-brand-dark leading-tight drop-shadow-sm"> Professional Cleaning You Can Trust <br>
+                        Clean <span class="text-brand-blue">Genie.</span>
+                    </h1>
+                    <p class="text-lg text-gray-700 max-w-lg mx-auto lg:mx-0 drop-shadow-sm">
+                        We provide top-notch cleaning services for homes and businesses. Our team is trained, vetted, and ready to make your space shine.
+                    </p>
+                    
+                    <div class="flex flex-wrap gap-4 justify-center lg:justify-start pt-4">
+                        <a href="#services" class="bg-brand-dark text-white px-8 py-3 rounded-md font-medium hover:bg-brand-blue transition shadow-md flex items-center justify-center gap-2">
+                            Our Services <i class="fas fa-arrow-right text-sm"></i>
+                        </a>
+                        <a href="booking/index.html" class="border-2 border-brand-dark text-brand-dark px-8 py-3 rounded-md font-medium hover:bg-brand-blue hover:text-white transition flex items-center justify-center gap-2">
+                            Book Now <i class="fas fa-arrow-right text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right: Sliding Carousel Image -->
+                <div class="flex justify-center lg:justify-end fade-in">
+                    <div class="carousel-container shadow-2xl">
+                        <div class="carousel-track rounded-lg overflow-hidden">
+                            
+                            <!-- Slide 1 -->
+                            <div class="carousel-slide">
+                                <img src="images/Images1.jpg" alt="Professional Cleaner 1"> 
+                            </div>
+                            
+                            <!-- Slide 2 -->
+                            <div class="carousel-slide">
+                                <img src="images/DeepCleaning.jpg" alt="Professional Cleaner 2">
+                            </div>
+                            
+                            <!-- Slide 3 -->
+                            <div class="carousel-slide">
+                                <img src="images/Post_Construction.jpg" alt="Professional Cleaner 3">
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FEATURE CARDS -->
+            <div class="mt-20 grid grid-cols-1 md:grid-cols-3 gap-6 fade-in">
+                <div class="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition duration-300 text-center lg:text-left">
+                    <div class="mb-4 text-brand-blue text-3xl"><i class="fas fa-user-shield"></i></div>
+                    <h4 class="font-bold text-brand-dark text-lg mb-1">Trusted Professionals</h4>
+                    <p class="text-gray-500 text-sm leading-relaxed">Trained, background-checked for your peace of mind.</p>
+                </div>
+                <div class="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition duration-300 text-center lg:text-left">
+                    <div class="mb-4 text-brand-blue text-3xl"><i class="fas fa-hand-holding-heart"></i></div>
+                    <h4 class="font-bold text-brand-dark text-lg mb-1">Quality Service</h4>
+                    <p class="text-gray-500 text-sm leading-relaxed">Safe products, high standards, and attention to detail.</p>
+                </div>
+                <div class="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition duration-300 text-center lg:text-left">
+                    <div class="mb-4 text-brand-blue text-3xl"><i class="fas fa-check-circle"></i></div>
+                    <h4 class="font-bold text-brand-dark text-lg mb-1">Satisfaction Guaranteed</h4>
+                    <p class="text-gray-500 text-sm leading-relaxed">Your priority is ours. We don't cut corners.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= SECTION 02: SERVICES ================= -->
+    <section id="services" class="bg-brand-light py-20 scroll-mt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12 fade-in">
+                <h2 class="text-3xl font-bold text-brand-dark mb-2">Our Services</h2>
+                <div class="w-16 h-1 bg-brand-blue mx-auto mb-4"></div>
+                <p class="text-gray-600">Choose the service that fits your needs.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:-translate-y-2 transition duration-300 fade-in">
+                    <div class="relative h-64">
+                        <img src="images/DeepCleaning.jpg" class="w-full h-full object-cover" alt="Deep Cleaning">
+                        <div class="absolute -bottom-6 left-1/2 transform -translate-x-1/2 bg-white p-3 rounded-full shadow-md text-brand-blue text-xl"><i class="fas fa-home"></i></div>
+                    </div>
+                    <div class="p-6 pt-8 text-center">
+                        <h3 class="text-xl font-bold text-brand-dark mb-2">Deep Cleaning</h3>
+                        <p class="text-gray-500 text-sm mb-4">Thorough cleaning for your home from top to bottom.</p>
+                        <a href="#" class="text-brand-blue text-sm font-semibold hover:underline flex items-center justify-center gap-1">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <!-- Service 2 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:-translate-y-2 transition duration-300 fade-in">
+                    <div class="relative h-64">
+                        <img src="images/PostConstruction1.jpg" class="w-full h-full object-cover" alt="Post Construction">
+                        <div class="absolute -bottom-6 left-1/2 transform -translate-x-1/2 bg-white p-3 rounded-full shadow-md text-brand-blue text-xl"><i class="fas fa-industry"></i></div>
+                    </div>
+                    <div class="p-6 pt-8 text-center">
+                        <h3 class="text-xl font-bold text-brand-dark mb-2">Post-Construction</h3>
+                        <p class="text-gray-500 text-sm mb-4">We handle the mess after construction or renovation.</p>
+                        <a href="#" class="text-brand-blue text-sm font-semibold hover:underline flex items-center justify-center gap-1">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <!-- Service 3 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:-translate-y-2 transition duration-300 fade-in">
+                    <div class="relative h-64">
+                        <img src="images/MoveinoutCleaning.jpg" class="w-full h-full object-cover" alt="Move In Move Out">
+                        <div class="absolute -bottom-6 left-1/2 transform -translate-x-1/2 bg-white p-3 rounded-full shadow-md text-brand-blue text-xl"><i class="fas fa-truck-moving"></i></div>
+                    </div>
+                    <div class="p-6 pt-8 text-center">
+                        <h3 class="text-xl font-bold text-brand-dark mb-2">Move In / Move Out</h3>
+                        <p class="text-gray-500 text-sm mb-4">Moving is stressful enough. Let us clean for you.</p>
+                        <a href="#" class="text-brand-blue text-sm font-semibold hover:underline flex items-center justify-center gap-1">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============================================ -->
+            <!-- RESTORED CUSTOM CLEANING BLUE BANNER -->
+            <!-- ============================================ -->
+            <div class="mt-12 bg-brand-blue text-white rounded-xl p-6 flex flex-col md:flex-row items-center justify-between gap-4 shadow-lg fade-in text-center md:text-left">
+                <div class="flex flex-col md:flex-row items-center gap-4">
+                    <i class="fas fa-clipboard-list text-3xl"></i>
+                    <div>
+                        <h4 class="font-bold text-lg">Need a custom cleaning solution?</h4>
+                        <p class="text-sm opacity-90">Contact us and we'll create a plan that works for you.</p>
+                    </div>
+                </div>
+                <a href="#contact" class="bg-white text-brand-blue px-6 py-2 rounded-md font-semibold hover:bg-gray-100 transition flex items-center gap-2">
+                    Contact Us <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+            <!-- ============================================ -->
+
+        </div>
+    </section>
+
+    <!-- ================= SECTION 03: ABOUT US ================= -->
+    <section id="about" class="bg-brand-light py-20 scroll-mt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="fade-in text-center lg:text-left">
+                    <span class="text-brand-blue font-semibold text-sm tracking-wider uppercase">About Clean Genie Cleaning Corp.</span>
+                    <div class="w-16 h-1 bg-brand-blue mx-auto lg:mx-0 mt-1 mb-4"></div>
+                    <h2 class="text-3xl font-bold text-brand-dark mt-2 mb-4">Your Cleaning Partner You Can Trust</h2>
+                    <p class="text-gray-600 mb-6 leading-relaxed mx-auto lg:mx-0 max-w-lg">Clean Genie Cleaning Corp. is committed to providing high-quality, reliable, and affordable cleaning services. We treat your space like our own.</p>
+                    <div class="grid grid-cols-2 gap-4 mt-8 max-w-lg mx-auto lg:mx-0">
+                        <div class="flex flex-col items-center text-center p-4 bg-white rounded-lg shadow-sm">
+                            <i class="fas fa-shield-alt text-brand-blue text-2xl mb-2"></i>
+                            <h5 class="font-bold text-sm text-brand-dark">Reliable</h5>
+                            <p class="text-[10px] text-gray-500">You can count on us anytime.</p>
+                        </div>
+                        <div class="flex flex-col items-center text-center p-4 bg-white rounded-lg shadow-sm">
+                            <i class="fas fa-user-tie text-brand-blue text-2xl mb-2"></i>
+                            <h5 class="font-bold text-sm text-brand-dark">Professional</h5>
+                            <p class="text-[10px] text-gray-500">Trained, skilled, and vetted.</p>
+                        </div>
+                        <div class="flex flex-col items-center text-center p-4 bg-white rounded-lg shadow-sm">
+                            <i class="fas fa-dollar-sign text-brand-blue text-2xl mb-2"></i>
+                            <h5 class="font-bold text-sm text-brand-dark">Affordable</h5>
+                            <p class="text-[10px] text-gray-500">Quality service at a fair price.</p>
+                        </div>
+                        <div class="flex flex-col items-center text-center p-4 bg-white rounded-lg shadow-sm">
+                            <i class="fas fa-star text-brand-blue text-2xl mb-2"></i>
+                            <h5 class="font-bold text-sm text-brand-dark">Quality Service</h5>
+                            <p class="text-[10px] text-gray-500">We don't cut corners.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="fade-in flex justify-center">
+                    <img src="images/Images2.jpg" alt="Cleaning Team" class="rounded-xl shadow-lg object-cover w-full max-w-md lg:max-w-full h-auto">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= SECTION 04: CONTACT US ================= -->
+    <section id="contact" class="py-20 scroll-mt-20 bg-white">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 fade-in">
+                <h2 class="text-3xl font-bold text-brand-dark mb-2">Contact Us</h2>
+                <div class="w-16 h-1 bg-brand-blue mx-auto mb-4"></div>
+                <p class="text-gray-600 max-w-md mx-auto">We'd love to hear from you! Reach out to us for inquiries or service requests.</p>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start justify-items-center">
+                <!-- Contact Info -->
+                <div class="w-full max-w-md fade-in flex flex-col items-center">
+                    <div class="space-y-4 w-full">
+                        <div class="flex items-center gap-4 p-4 bg-white rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition duration-300 group">
+                            <div class="flex-shrink-0 w-10 h-10 bg-brand-blue/10 rounded-full flex items-center justify-center text-brand-blue group-hover:bg-brand-blue group-hover:text-white transition duration-300"><i class="fas fa-phone-alt text-sm"></i></div>
+                            <div class="text-left"><p class="font-bold text-brand-dark text-sm">Phone</p><p class="text-gray-500 text-sm">0912 345 6789</p></div>
+                        </div>
+                        <div class="flex items-center gap-4 p-4 bg-white rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition duration-300 group">
+                            <div class="flex-shrink-0 w-10 h-10 bg-brand-blue/10 rounded-full flex items-center justify-center text-brand-blue group-hover:bg-brand-blue group-hover:text-white transition duration-300"><i class="fas fa-envelope text-sm"></i></div>
+                            <div class="text-left"><p class="font-bold text-brand-dark text-sm">Email</p><p class="text-gray-500 text-sm">info@cleangenie.ph</p></div>
+                        </div>
+                        <div class="flex items-center gap-4 p-4 bg-white rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition duration-300 group">
+                            <div class="flex-shrink-0 w-10 h-10 bg-brand-blue/10 rounded-full flex items-center justify-center text-brand-blue group-hover:bg-brand-blue group-hover:text-white transition duration-300"><i class="fas fa-map-marker-alt text-sm"></i></div>
+                            <div class="text-left"><p class="font-bold text-brand-dark text-sm">Location</p><p class="text-gray-500 text-sm">Quezon City, Philippines</p></div>
+                        </div>
+                        <div class="flex items-center gap-4 p-4 bg-white rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition duration-300 group">
+                            <div class="flex-shrink-0 w-10 h-10 bg-brand-blue/10 rounded-full flex items-center justify-center text-brand-blue group-hover:bg-brand-blue group-hover:text-white transition duration-300"><i class="fas fa-clock text-sm"></i></div>
+                            <div class="text-left"><p class="font-bold text-brand-dark text-sm">Business Hours</p><p class="text-gray-500 text-sm">Mon - Sat: 8:00 AM - 6:00 PM<br>Sunday: Closed</p></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Contact Form -->
+                <div class="w-full max-w-md fade-in">
+                    <div class="bg-white p-8 rounded-2xl shadow-xl border border-gray-100">
+                        <h3 class="text-xl font-bold text-brand-dark mb-1 text-center">Send us a Message</h3>
+                        <p class="text-center text-xs text-gray-500 mb-6">We typically reply within 24 hours</p>
+                        <form action="https://formspree.io/f/mpznvrwv" method="POST" class="space-y-5">
+                            <div class="form-group">
+                                <label for="name" class="block text-sm font-medium text-brand-dark mb-1">Your Name</label>
+                                <div class="relative">
+                                    <input type="text" id="name" name="name" required class="w-full pl-10 pr-4 py-3 border-2 border-gray-200 rounded-lg focus:ring-2 focus:ring-brand-blue focus:border-brand-blue outline-none transition-all duration-300 text-sm bg-gray-50/50" placeholder="John Doe">
+                                    <i class="fas fa-user absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm"></i>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="email" class="block text-sm font-medium text-brand-dark mb-1">Email Address</label>
+                                <div class="relative">
+                                    <input type="email" id="email" name="email" required class="w-full pl-10 pr-4 py-3 border-2 border-gray-200 rounded-lg focus:ring-2 focus:ring-brand-blue focus:border-brand-blue outline-none transition-all duration-300 text-sm bg-gray-50/50" placeholder="john@example.com">
+                                    <i class="fas fa-envelope absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm"></i>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="subject" class="block text-sm font-medium text-brand-dark mb-1">Subject</label>
+                                <div class="relative">
+                                    <input type="text" id="subject" name="subject" required class="w-full pl-10 pr-4 py-3 border-2 border-gray-200 rounded-lg focus:ring-2 focus:ring-brand-blue focus:border-brand-blue outline-none transition-all duration-300 text-sm bg-gray-50/50" placeholder="I need a deep cleaning...">
+                                    <i class="fas fa-tag absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm"></i>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="message" class="block text-sm font-medium text-brand-dark mb-1">Message</label>
+                                <div class="relative">
+                                    <textarea id="message" name="message" rows="3" required class="w-full pl-10 pr-4 py-3 border-2 border-gray-200 rounded-lg focus:ring-2 focus:ring-brand-blue focus:border-brand-blue outline-none transition-all duration-300 text-sm bg-gray-50/50 resize-none" placeholder="Tell us about your cleaning needs..."></textarea>
+                                    <i class="fas fa-comment-dots absolute left-3 top-4 text-gray-400 text-sm"></i>
+                                </div>
+                            </div>
+                            <button type="submit" class="w-full bg-brand-dark text-white py-3 rounded-lg font-bold hover:bg-brand-blue hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 shadow-md">Send Message <i class="fas fa-paper-plane ml-2"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="bg-brand-dark text-white pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 mb-12">
+
+                <!-- COLUMN 1: Logo & Description -->
+                <div class="space-y-4 text-left">
+                    <a href="#home" class="flex items-center gap-3 justify-start">
+                        <img src="images/genie.png" alt="Clean Genie Logo" class="w-8 h-8 object-contain shrink-0">
+                        <div class="flex flex-col leading-tight">
+                            <span class="font-bold text-lg tracking-wide uppercase">Clean Genie</span>
+                            <span class="text-[10px] text-gray-300 tracking-wider uppercase">Cleaning Corp.</span>
+                        </div>
+                    </a>
+                    <!-- FIXED: Removed mx-auto and max-w-xs so it never indents -->
+                    <p class="text-sm text-gray-300 leading-relaxed">Professional cleaning services for homes and businesses.</p>
+                </div>
+
+                <!-- COLUMN 2: Quick Links -->
+                <div class="text-left">
+                    <h4 class="font-semibold text-white mb-4 text-sm">Quick Links</h4>
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li><a href="#home" class="hover:text-white transition block">Home</a></li>
+                        <li><a href="#services" class="hover:text-white transition block">Services</a></li>
+                        <li><a href="#about" class="hover:text-white transition block">About Us</a></li>
+                        <li><a href="#contact" class="hover:text-white transition block">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- COLUMN 3: Services -->
+                <div class="text-left">
+                    <h4 class="font-semibold text-white mb-4 text-sm">Services</h4>
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li><a href="#services" class="hover:text-white transition block">Deep Cleaning</a></li>
+                        <li><a href="#services" class="hover:text-white transition block">Post-Construction</a></li>
+                        <li><a href="#services" class="hover:text-white transition block">Move In / Move Out</a></li>
+                    </ul>
+                </div>
+
+                <!-- COLUMN 4: Contact Us -->
+                <div class="text-left">
+                    <h4 class="font-semibold text-white mb-4 text-sm">Contact Us</h4>
+                    <ul class="space-y-3 text-sm text-gray-300">
+                        <li class="flex items-center gap-3 justify-start"><i class="fas fa-phone-alt w-4 text-brand-blue shrink-0"></i> 0912 345 6789</li>
+                        <li class="flex items-center gap-3 justify-start"><i class="fas fa-envelope w-4 text-brand-blue shrink-0"></i> info@cleangenie.ph</li>
+                        <li class="flex items-center gap-3 justify-start"><i class="fas fa-map-marker-alt w-4 text-brand-blue shrink-0"></i> Quezon City, PH</li>
+                    </ul>
+                    
+                    <!-- Social Icons -->
+                    <div class="flex gap-4 mt-6 justify-start">
+                        <a href="https://www.facebook.com/clean.genieco" target="_blank" class="bg-white/10 hover:bg-[#3b6bd6] transition w-8 h-8 rounded-full flex items-center justify-center text-white">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.instagram.com/cg.cleaningco" target="_blank" class="bg-white/10 hover:bg-[#3b6bd6] transition w-8 h-8 rounded-full flex items-center justify-center text-white">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="bg-white/10 hover:bg-[#3b6bd6] transition w-8 h-8 rounded-full flex items-center justify-center text-white">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                    </div>
+                </div>
+            </div> 
+            <div class="border-t border-white/10 pt-6 text-center text-xs text-gray-400">
+                &copy; 2026 Clean Genie Cleaning Corp. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>
