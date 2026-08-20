@@ -1,0 +1,198 @@
+/* --- TAILWIND CUSTOM COLORS --- */
+:root {
+    --brand-dark: #1e2c56;
+    --brand-blue: #2563eb;
+    --brand-light: #f8f9fa;
+}
+
+.text-brand-dark { color: #1e2c56; }
+.bg-brand-dark { background-color: #1e2c56; }
+.text-brand-blue { color: #2563eb; }
+.bg-brand-blue { background-color: #2563eb; }
+.bg-brand-light { background-color: #f8f9fa; }
+
+/* ==================================================== */
+/* --- SMOOTH SCROLL FIXES (NEW!) --- */
+/* ==================================================== */
+html {
+    scroll-behavior: smooth; /* Makes the scroll glide smoothly */
+}
+
+/* Prevents the sticky header from covering the top of your sections */
+section[id] {
+    scroll-margin-top: 100px; 
+}
+
+/* ==================================================== */
+/* --- SCROLL ANIMATIONS (Accurate & Smooth) --- */
+/* ==================================================== */
+.fade-in {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+                transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: opacity, transform;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- DESKTOP NAVIGATION STYLES --- */
+.nav-link {
+    position: relative;
+    padding: 8px 6px;
+    transition: color 0.3s;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    color: #1e2c56;
+    text-transform: uppercase;
+}
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2.5px;
+    bottom: 0;
+    left: 0;
+    background-color: #2563eb;
+    transition: width 0.3s;
+}
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+.nav-link:hover, .nav-link.active {
+    color: #2563eb;
+}
+
+/* --- MOBILE NAVIGATION STYLES --- */
+.mobile-nav-link {
+    display: block;
+    padding: 14px 0;
+    color: #1e2c56;
+    font-weight: 600;
+    font-size: 1rem;
+    border-bottom: 1px solid #f3f4f6;
+    transition: color 0.2s;
+    text-align: center;
+    position: relative;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+/* --- MOBILE NAVIGATION HOVER/ACTIVE UNDERLINE --- */
+.mobile-nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2.5px;
+    bottom: 0;
+    left: 50%;
+    background-color: #2563eb;
+    transition: width 0.3s, left 0.3s;
+}
+
+.mobile-nav-link:hover::after {
+    width: 20%;
+    left: 40%;
+}
+
+.mobile-nav-link.active {
+    color: #2563eb;
+}
+.mobile-nav-link.active::after {
+    width: 20%;
+    left: 40%;
+}
+
+/* --- DESKTOP NAVIGATION SPACING --- */
+#desktop-nav {
+    gap: 1rem;
+}
+
+/* --- CONTACT FORM STAGGER ANIMATIONS --- */
+.fade-in.visible .form-group:nth-child(1) { transition-delay: 0.1s; }
+.fade-in.visible .form-group:nth-child(2) { transition-delay: 0.2s; }
+.fade-in.visible .form-group:nth-child(3) { transition-delay: 0.3s; }
+.fade-in.visible .form-group:nth-child(4) { transition-delay: 0.4s; }
+
+.form-group {
+    opacity: 0;
+    transform: translateY(15px);
+    transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.fade-in.visible .form-group {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ==================================================== */
+/* --- SLIDING HERO IMAGE CAROUSEL CSS --- */
+/* ==================================================== */
+.carousel-container {
+    position: relative;
+    width: 100%;
+    max-width: 600px; /* Limits width like your original image */
+    height: 400px;    /* Fixed height to prevent layout jumps */
+    overflow: hidden;
+    border-radius: 0.75rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.carousel-track {
+    display: flex;
+    width: 300%; /* 3 images = 300% width */
+    height: 100%;
+    animation: slide 12s infinite; /* 12 seconds for full loop */
+}
+
+.carousel-slide {
+    width: 33.333%; /* 100% / 3 images */
+    height: 100%;
+    flex-shrink: 0;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Keyframes for sliding */
+@keyframes slide {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(0); }       /* Pause on 1st image */
+    33% { transform: translateX(-33.333%); }/* Slide to 2nd */
+    58% { transform: translateX(-33.333%); }/* Pause on 2nd */
+    66% { transform: translateX(-66.666%); }/* Slide to 3rd */
+    91% { transform: translateX(-66.666%); }/* Pause on 3rd */
+    100% { transform: translateX(0); }      /* Reset back to 1st */
+}
+
+/* Adjustments for smaller screens */
+@media (max-width: 1024px) {
+    .carousel-container {
+        max-width: 100%;
+        height: 350px;
+    }
+}
+
+/* ==================================================== */
+/* --- MOBILE RESPONSIVENESS FOR THE BACKGROUND --- */
+/* ==================================================== */
+@media (max-width: 768px) {
+    #home {
+        /* Forces the image to cover the entire width and height on mobile */
+        background-size: cover !important;
+        background-position: center center !important;
+        background-repeat: no-repeat !important;
+        
+        /* Ensures the section is tall enough so the background isn't cut off */
+        min-height: 100vh;
+        padding-top: 100px; /* Adds safe space so the header doesn't cover your text */
+    }
+}
