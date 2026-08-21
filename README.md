@@ -1,2 +1,14 @@
-# Clean-Genie
-A web-based service request and booking system developed for Clean Genie Cleaning Corp. that allows customers to request cleaning services online, schedule appointments, and manage service information efficiently
+clean-genie/
+│
+├── frontend/          ✅ Upload now
+│   ├── booking/
+│   ├── images/
+│   ├── index.html
+│   ├── script.js
+│   └── style.css
+│
+├── backend/           🚧 Add later
+│
+├── admin/             🚧 Add later
+│
+└── clean-genie-api/   🚧 Add later
