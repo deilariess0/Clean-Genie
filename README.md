@@ -1,14 +1,1 @@
-clean-genie/
-│
-├── frontend/          ✅ Upload now
-│   ├── booking/
-│   ├── images/
-│   ├── index.html
-│   ├── script.js
-│   └── style.css
-│
-├── backend/           🚧 Add later
-│
-├── admin/             🚧 Add later
-│
-└── clean-genie-api/   🚧 Add later
+Clean Genie is my college capstone thesis project, originally developed as a web-based cleaning service booking system. I’m currently rebuilding it into a more modern full-stack application, improving the frontend while developing a backend, database integration, and admin dashboard to make the system more scalable, secure, and practical.
