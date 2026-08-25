@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clean Genie - Book a Service</title>
+    <link rel="icon" type="image/x-icon" href="../images/genie.png">
     
     <!-- Google Fonts & FontAwesome (Load these FIRST) -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -45,7 +46,7 @@
                         <div class="flex items-center gap-1 font-bold text-lg text-slate-900 leading-none">
                             <span class="text-primary">CLEAN</span> GENIE
                         </div>
-                        <div class="text-[10px] text-slate-500 font-medium tracking-widest uppercase mt-1">Cleaning Corp.</div>
+                        <div class="text-[10px] text-slate-500 font-medium tracking-widest uppercase mt-1">Cleaning Co</div>
                     </div>
                 </a>
 
@@ -61,19 +62,23 @@
                 <a href="index.html" class="hidden md:inline-block bg-brand-dark text-white px-6 py-2.5 rounded-md font-medium text-sm hover:bg-brand-blue transition-all shadow-md no-underline">Book a Service</a>
 
                 <!-- Mobile Menu Toggle -->
-                <button id="mobile-menu-btn" class="md:hidden text-brand-dark text-2xl focus:outline-none hover:text-brand-blue transition z-10">
-                    <i class="fas fa-bars"></i>
+                <button id="mobile-menu-btn" class="md:hidden text-brand-dark z-10 focus:outline-none hover:text-brand-blue transition">
+                    <div class="hamburger-icon w-8 h-6 flex flex-col justify-between items-center relative">
+                        <span class="hamburger-line block w-8 h-1 bg-current rounded transition-all duration-300 ease-in-out origin-center"></span>
+                        <span class="hamburger-line block w-8 h-1 bg-current rounded transition-all duration-300 ease-in-out origin-center"></span>
+                        <span class="hamburger-line block w-8 h-1 bg-current rounded transition-all duration-300 ease-in-out origin-center"></span>
+                    </div>
                 </button>
             </div>
 
             <!-- Mobile Navigation Dropdown -->
-            <div id="mobile-menu" class="hidden md:hidden flex-col space-y-3 pb-6 pt-4 bg-white absolute left-0 w-full shadow-md px-4 sm:px-6 lg:px-8 border-t border-gray-100">
-                <a href="../index.html" class="mobile-nav-link hover:text-brand-blue transition block py-2 no-underline">Home</a>
-                <a href="../index.html#services" class="mobile-nav-link hover:text-brand-blue transition block py-2 no-underline">Services</a>
-                <a href="../index.html#about" class="mobile-nav-link hover:text-brand-blue transition block py-2 no-underline">About Us</a>
-                <a href="../index.html#contact" class="mobile-nav-link hover:text-brand-blue transition block py-2 no-underline">Contact Us</a>
+            <div id="mobile-menu" class="md:hidden flex-col space-y-3 pb-6 pt-4 bg-white absolute left-0 w-full shadow-md px-4 sm:px-6 lg:px-8 border-t border-gray-100 max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+                <a href="../index.html" class="mobile-nav-link">Home</a>
+                <a href="../index.html#services" class="mobile-nav-link">Services</a>
+                <a href="../index.html#about" class="mobile-nav-link">About Us</a>
+                <a href="../index.html#contact" class="mobile-nav-link">Contact Us</a>
                 <div class="flex justify-center mt-4">
-                    <a href="index.html" class="bg-brand-dark text-white text-center px-6 py-3 rounded-md font-medium hover:bg-brand-blue transition shadow-md w-full max-w-xs no-underline">Book a Service</a>
+                    <a href="booking/index.html" class="bg-brand-dark text-white text-center px-6 py-3 rounded-md font-medium hover:bg-brand-blue transition shadow-md w-full max-w-xs">Book a Service</a>
                 </div>
             </div>
         </div>
@@ -82,7 +87,7 @@
     <!-- Light Blue Banner Strip -->
     <div class="bg-blue-50 py-4 border-b border-blue-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <a href="../index.html" class="inline-flex items-center gap-2 text-brand-blue font-medium hover:underline text-sm no-underline">
+            <a href="../index.html" class="inline-flex items-center gap-2 text-brand-blue font-medium text-sm">
                 <i class="fas fa-arrow-left"></i> Back to Home
             </a>
         </div>
@@ -297,7 +302,7 @@
                         <img src="../images/genie.png" alt="Clean Genie Logo" class="w-8 h-8 object-contain shrink-0">
                         <div class="flex flex-col leading-tight">
                             <span class="font-bold text-lg tracking-wide uppercase">Clean Genie</span>
-                            <span class="text-[10px] text-gray-300 tracking-wider uppercase">Cleaning Corp.</span>
+                            <span class="text-[10px] text-gray-300 tracking-wider uppercase">Cleaning Co</span>
                         </div>
                     </a>
                     <!-- FIXED: Removed mx-auto and max-w-xs so it never indents -->
@@ -349,7 +354,7 @@
                 </div>
             </div> 
             <div class="border-t border-white/10 pt-6 text-center text-xs text-gray-400">
-                &copy; 2026 Clean Genie Cleaning Corp. All rights reserved.
+                &copy; 2026 Clean Genie Cleaning Co All rights reserved.
             </div>
         </div>
     </footer>
