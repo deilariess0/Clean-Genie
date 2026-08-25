@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clean Genie Cleaning Corp.</title>
+    <title>Clean Genie Cleaning Co</title>
+    <link rel="icon" type="image/x-icon" href="images/genie.png">
     
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -46,7 +47,7 @@
                         <div class="flex items-center gap-1 font-bold text-lg text-slate-900 leading-none">
                             <span class="text-primary">CLEAN</span> GENIE
                         </div>
-                        <div class="text-[10px] text-slate-500 font-medium tracking-widest uppercase mt-1">Cleaning Corp.</div>
+                        <div class="text-[10px] text-slate-500 font-medium tracking-widest uppercase mt-1">Cleaning Co</div>
                     </div>
                 </a>
 
@@ -62,13 +63,17 @@
                 <a href="booking/index.html" class="hidden md:inline-block bg-brand-dark text-white px-6 py-2.5 rounded-md font-medium text-sm hover:bg-brand-blue transition-all shadow-md">Book a Service</a>
 
                 <!-- Mobile Menu Toggle -->
-                <button id="mobile-menu-btn" class="md:hidden text-brand-dark text-2xl focus:outline-none hover:text-brand-blue transition z-10">
-                    <i class="fas fa-bars"></i>
+                <button id="mobile-menu-btn" class="md:hidden text-brand-dark z-10 focus:outline-none hover:text-brand-blue transition">
+                    <div class="hamburger-icon w-8 h-6 flex flex-col justify-between items-center relative">
+                        <span class="hamburger-line block w-8 h-1 bg-current rounded transition-all duration-300 ease-in-out origin-center"></span>
+                        <span class="hamburger-line block w-8 h-1 bg-current rounded transition-all duration-300 ease-in-out origin-center"></span>
+                        <span class="hamburger-line block w-8 h-1 bg-current rounded transition-all duration-300 ease-in-out origin-center"></span>
+                    </div>
                 </button>
             </div>
 
             <!-- Mobile Navigation Dropdown -->
-            <div id="mobile-menu" class="hidden md:hidden flex-col space-y-3 pb-6 pt-4 bg-white absolute left-0 w-full shadow-md px-4 sm:px-6 lg:px-8 border-t border-gray-100">
+            <div id="mobile-menu" class="md:hidden flex-col space-y-3 pb-6 pt-4 bg-white absolute left-0 w-full shadow-md px-4 sm:px-6 lg:px-8 border-t border-gray-100 max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
                 <a href="#home" class="mobile-nav-link">Home</a>
                 <a href="#services" class="mobile-nav-link">Services</a>
                 <a href="#about" class="mobile-nav-link">About Us</a>
@@ -224,10 +229,10 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div class="fade-in text-center lg:text-left">
-                    <span class="text-brand-blue font-semibold text-sm tracking-wider uppercase">About Clean Genie Cleaning Corp.</span>
+                    <span class="text-brand-blue font-semibold text-sm tracking-wider uppercase">About Clean Genie Cleaning Co</span>
                     <div class="w-16 h-1 bg-brand-blue mx-auto lg:mx-0 mt-1 mb-4"></div>
                     <h2 class="text-3xl font-bold text-brand-dark mt-2 mb-4">Your Cleaning Partner You Can Trust</h2>
-                    <p class="text-gray-600 mb-6 leading-relaxed mx-auto lg:mx-0 max-w-lg">Clean Genie Cleaning Corp. is committed to providing high-quality, reliable, and affordable cleaning services. We treat your space like our own.</p>
+                    <p class="text-gray-600 mb-6 leading-relaxed mx-auto lg:mx-0 max-w-lg">Clean Genie Cleaning Co is committed to providing high-quality, reliable, and affordable cleaning services. We treat your space like our own.</p>
                     <div class="grid grid-cols-2 gap-4 mt-8 max-w-lg mx-auto lg:mx-0">
                         <div class="flex flex-col items-center text-center p-4 bg-white rounded-lg shadow-sm">
                             <i class="fas fa-shield-alt text-brand-blue text-2xl mb-2"></i>
@@ -341,7 +346,7 @@
                         <img src="images/genie.png" alt="Clean Genie Logo" class="w-8 h-8 object-contain shrink-0">
                         <div class="flex flex-col leading-tight">
                             <span class="font-bold text-lg tracking-wide uppercase">Clean Genie</span>
-                            <span class="text-[10px] text-gray-300 tracking-wider uppercase">Cleaning Corp.</span>
+                            <span class="text-[10px] text-gray-300 tracking-wider uppercase">Cleaning Co</span>
                         </div>
                     </a>
                     <!-- FIXED: Removed mx-auto and max-w-xs so it never indents -->
@@ -393,7 +398,7 @@
                 </div>
             </div> 
             <div class="border-t border-white/10 pt-6 text-center text-xs text-gray-400">
-                &copy; 2026 Clean Genie Cleaning Corp. All rights reserved.
+                &copy; 2026 Clean Genie Cleaning Co All rights reserved.
             </div>
         </div>
     </footer>
