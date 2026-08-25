@@ -204,8 +204,8 @@ document.addEventListener('DOMContentLoaded', function() {
             };
 
             try {
-                // 🔒 SECURITY FIX: Use the correct API URL (Works with CORS)
-                const response = await fetch('http://localhost:5000/api/bookings', {
+                // 🔒 SECURITY FIX: Use the LIVE Render URL instead of localhost
+                const response = await fetch('https://clean-genie-backend.onrender.com/api/bookings', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(bookingData)
@@ -237,7 +237,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             } catch (error) {
                 console.error('Error submitting booking:', error);
-                alert('❌ Failed to connect to the server. Please make sure your backend is running on port 5000.');
+                alert('❌ Failed to connect to the server. Please make sure your backend is running on Render.');
             }
         });
     }
