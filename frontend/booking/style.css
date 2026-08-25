@@ -86,9 +86,47 @@ body {
     margin: 0 auto;
 }
 
+/* ==================================================== */
+/* --- 4. HAMBURGER MENU ANIMATION (NEW) --- */
+/* ==================================================== */
+.hamburger-line {
+    background-color: #1e2c56;
+}
+
+#mobile-menu-btn.open .hamburger-line:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+}
+
+#mobile-menu-btn.open .hamburger-line:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+}
+
+#mobile-menu-btn.open .hamburger-line:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+}
+
+#mobile-menu-btn:hover .hamburger-line {
+    background-color: #2563eb;
+}
 
 /* ==================================================== */
-/* --- 4. BOOKING PAGE SPECIFIC STYLES --- */
+/* --- 5. MOBILE MENU SLIDE DOWN ANIMATION (NEW) --- */
+/* ==================================================== */
+#mobile-menu {
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 0.5s ease-in-out, opacity 0.4s ease-in-out;
+}
+
+#mobile-menu.open {
+    max-height: 500px;
+    opacity: 1;
+}
+
+
+/* ==================================================== */
+/* --- 6. BOOKING PAGE SPECIFIC STYLES --- */
 /* ==================================================== */
 
 /* Large Calendar Icon Wrapper */
@@ -119,7 +157,7 @@ textarea:focus {
 
 
 /* ==================================================== */
-/* --- 5. FOOTER STYLES --- */
+/* --- 7. FOOTER STYLES --- */
 /* ==================================================== */
 
 /* Footer Force Color */
