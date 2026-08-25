@@ -1,39 +1,32 @@
 document.addEventListener('DOMContentLoaded', () => {
     
-    // --- 1. MOBILE MENU TOGGLE ---
-    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
+// --- 1. MOBILE MENU TOGGLE & SLIDE ANIMATION ---
+const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+const mobileMenu = document.getElementById('mobile-menu');
 
-    // Guard clause to prevent errors if elements don't exist
-    if (mobileMenuBtn && mobileMenu) {
-        const iconElement = mobileMenuBtn.querySelector('i');
+if (mobileMenuBtn && mobileMenu) {
+    mobileMenuBtn.addEventListener('click', () => {
+        // Toggle the menu slide animation
+        mobileMenu.classList.toggle('open');
+        
+        // Toggle the "open" class on the button (triggers the lines -> X animation)
+        mobileMenuBtn.classList.toggle('open');
+    });
 
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-            if (mobileMenu.classList.contains('hidden')) {
-                iconElement.classList.remove('fa-times');
-                iconElement.classList.add('fa-bars');
-            } else {
-                iconElement.classList.remove('fa-bars');
-                iconElement.classList.add('fa-times');
+    // Close mobile menu when a link is clicked
+    document.querySelectorAll('#mobile-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.remove('open'); // Slide up
+            mobileMenuBtn.classList.remove('open'); // Turn X back to lines
+        
+            // Saves the click so the line remains stuck when you reload
+            const sectionId = link.getAttribute('href').substring(1);
+            if(sectionId) {
+                sessionStorage.setItem('activeSection', sectionId);
             }
         });
-
-        // Close mobile menu and save active link when clicked
-        document.querySelectorAll('#mobile-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-                iconElement.classList.remove('fa-times');
-                iconElement.classList.add('fa-bars');
-                
-                // Saves the click so the line remains stuck when you reload
-                const sectionId = link.getAttribute('href').substring(1);
-                if(sectionId) {
-                    sessionStorage.setItem('activeSection', sectionId);
-                }
-            });
-        });
-    }
+    });
+}
 
     // --- 2. PERFECT SCROLL ANIMATIONS (Intersection Observer) ---
     const fadeElements = document.querySelectorAll('.fade-in');
