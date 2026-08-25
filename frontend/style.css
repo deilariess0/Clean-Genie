@@ -196,3 +196,40 @@ section[id] {
         padding-top: 100px; /* Adds safe space so the header doesn't cover your text */
     }
 }
+
+/* --- HAMBURGER MENU ANIMATION --- */
+.hamburger-line {
+    background-color: #1e2c56; /* matches your brand-dark */
+}
+
+/* State when menu is OPEN (class added by JS) */
+#mobile-menu-btn.open .hamburger-line:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+}
+
+#mobile-menu-btn.open .hamburger-line:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+}
+
+#mobile-menu-btn.open .hamburger-line:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+}
+
+/* Hover effect for the button */
+#mobile-menu-btn:hover .hamburger-line {
+    background-color: #2563eb; /* brand-blue on hover */
+}
+
+/* --- MOBILE MENU SLIDE DOWN ANIMATION --- */
+#mobile-menu {
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 0.5s ease-in-out, opacity 0.4s ease-in-out;
+}
+
+/* When open, slide down and fade in */
+#mobile-menu.open {
+    max-height: 500px; /* Make this tall enough to fit all your links + button */
+    opacity: 1;
+}
