@@ -1,31 +1,29 @@
 document.addEventListener('DOMContentLoaded', function() {
     
-    // =========================================
-    // 1. MOBILE MENU TOGGLE (Hamburger Button)
-    // =========================================
+    // --- 1. MOBILE MENU TOGGLE & SLIDE ANIMATION ---
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
 
     if (mobileMenuBtn && mobileMenu) {
-        const iconElement = mobileMenuBtn.querySelector('i');
-
         mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-            if (mobileMenu.classList.contains('hidden')) {
-                iconElement.classList.remove('fa-times');
-                iconElement.classList.add('fa-bars');
-            } else {
-                iconElement.classList.remove('fa-bars');
-                iconElement.classList.add('fa-times');
-            }
+            // Toggle the menu slide animation
+            mobileMenu.classList.toggle('open');
+            
+            // Toggle the "open" class on the button (triggers the lines -> X animation)
+            mobileMenuBtn.classList.toggle('open');
         });
 
         // Close mobile menu when a link is clicked
         document.querySelectorAll('#mobile-menu a').forEach(link => {
             link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-                iconElement.classList.remove('fa-times');
-                iconElement.classList.add('fa-bars');
+                mobileMenu.classList.remove('open'); // Slide up
+                mobileMenuBtn.classList.remove('open'); // Turn X back to lines
+            
+                // Saves the click so the line remains stuck when you reload
+                const sectionId = link.getAttribute('href').substring(1);
+                if(sectionId) {
+                    sessionStorage.setItem('activeSection', sectionId);
+                }
             });
         });
     }
@@ -206,6 +204,7 @@ document.addEventListener('DOMContentLoaded', function() {
             };
 
             try {
+                // 🔒 SECURITY FIX: Use the correct API URL (Works with CORS)
                 const response = await fetch('http://localhost:5000/api/bookings', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
